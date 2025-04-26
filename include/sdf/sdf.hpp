@@ -188,6 +188,10 @@ struct SDF {
                       bool trunc_aabb = false,
                       int n_threads = std::thread::hardware_concurrency()) const;
 
+	Vector operator()(Eigen::Ref<const Points> points, Eigen::Ref<Points> pointNormals,
+					  bool trunc_aabb = false,
+					  int n_threads = std::thread::hardware_concurrency()) const;
+
     // Return exact nearest neighbor vertex index for each point (index as in
     // input verts)
     Eigen::VectorXi nn(Eigen::Ref<const Points> points, int n_threads = std::thread::hardware_concurrency()) const;
